@@ -16,8 +16,8 @@ CREATE TABLE bronze.crm_cust_info ( -- Create the table bronze.crm_cust_info
 	cst_key NVARCHAR(50),
 	cst_firstname NVARCHAR(50),
 	cst_lastname NVARCHAR(50),
-	cst_marital_status CHAR(1),
-	cst_gndr CHAR(1),
+	cst_marital_status NVARCHAR(50),
+	cst_gndr NVARCHAR(50),
 	cst_create_date DATE
 );
 GO
@@ -33,7 +33,7 @@ CREATE TABLE bronze.crm_prd_info ( -- Create the table bronze.crm_prd_info
 	prd_key NVARCHAR(50),
 	prd_nm NVARCHAR(50),
 	prd_cost INT,
-	prd_line CHAR(1),
+	prd_line NVARCHAR(50),
 	prd_start_dt DATE,
 	prd_end_dt DATE
 );
