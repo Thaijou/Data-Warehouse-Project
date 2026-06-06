@@ -30,6 +30,7 @@ GO
 
 CREATE TABLE silver.crm_prd_info ( -- Create the table silver.crm_prd_info
 	prd_id INT,
+	cat_id NVARCHAR(50),
 	prd_key NVARCHAR(50),
 	prd_nm NVARCHAR(50),
 	prd_cost INT,
@@ -49,10 +50,10 @@ CREATE TABLE silver.crm_sales_details ( -- Create the table silver.crm_sales_det
 	sls_ord_num NVARCHAR(50),
 	sls_prd_key NVARCHAR(50),
 	sls_cust_id INT,
-	sls_order_dt INT,
+	sls_order_dt DATE,
 	sls_ship_dt DATE,
 	sls_due_dt DATE,
-	sls_sales DATE,
+	sls_sales INT,
 	sls_quantity INT,
 	sls_price INT
 );
@@ -65,9 +66,9 @@ END
 GO
 
 CREATE TABLE silver.erp_cust_az12 ( -- Create the table silver.erp_cust_az12
-	CID NVARCHAR(50),
-	BDATE DATE,
-	GEN NVARCHAR(50)
+	cst_id NVARCHAR(50),
+	birth_dt DATE,
+	gender NVARCHAR(50)
 );
 GO
 
@@ -78,8 +79,8 @@ END
 GO
 
 CREATE TABLE silver.erp_loc_a101 ( -- Create the table silver.erp_loc_a101
-	CID NVARCHAR(50),
-	CNTRY NVARCHAR(50)
+	cst_id NVARCHAR(50),
+	country NVARCHAR(50)
 );
 GO
 
@@ -90,7 +91,7 @@ END
 GO
 
 CREATE TABLE silver.erp_px_cat_g1v2 ( -- Create the table silver.erp_px_cat_g1v2
-	CAT NVARCHAR(50),
-	SUBCAT NVARCHAR(50),
-	MAINTENANCE NVARCHAR(50)
+	cat_id NVARCHAR(50),
+	sub_cat NVARCHAR(50),
+	maintenance NVARCHAR(50)
 );
