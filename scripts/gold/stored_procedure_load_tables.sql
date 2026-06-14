@@ -13,7 +13,7 @@ BEGIN
   customer_firstname,
   customer_lastname,
   country,
-  marital status,
+  marital_status,
   gender,
   birth_date
   )
@@ -30,7 +30,7 @@ BEGIN
     LEFT JOIN silver.erp_cust_az12
     ON silver.crm_cust_info.cst_id = silver.erp_cust_az12.cst_id
     LEFT JOIN silver.erp_loc_a101
-    ON silver.crm_cust_info.cst_id = silver.erp_loc_a101.cst_id;
+    ON silver.crm_cust_info.cst_id = REPLACE(silver.erp_loc_a101.cst_id, '-', '');
 
   TRUNCATE TABLE gold.dim_products
   INSERT INTO gold.dim_products (
