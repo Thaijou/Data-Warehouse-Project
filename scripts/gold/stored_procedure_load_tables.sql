@@ -28,9 +28,9 @@ BEGIN
       birth_dt
     FROM silver.crm_cust_info
     LEFT JOIN silver.erp_cust_az12
-    ON silver.crm_cust_info.cst_id = silver.erp_cust_az12.cst_id
+    ON silver.crm_cust_info.cst_key = silver.erp_cust_az12.cst_id
     LEFT JOIN silver.erp_loc_a101
-    ON silver.crm_cust_info.cst_id = REPLACE(silver.erp_loc_a101.cst_id, '-', '');
+    ON silver.crm_cust_info.cst_key = REPLACE(silver.erp_loc_a101.cst_id, '-', '');
 
   TRUNCATE TABLE gold.dim_products
   INSERT INTO gold.dim_products (
