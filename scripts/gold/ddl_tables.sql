@@ -52,12 +52,11 @@ GO
 CREATE TABLE gold.fact_orders (
   order_number NVARCHAR(50),
 	product_name NVARCHAR(50),
-	customer_fullname INT,
+	customer_fullname NVARCHAR(50),
 	order_date DATE,
 	ship_date DATE,
 	due_date DATE,
-	sales INT,
-	quantity INT,
 	price INT,
-  total_amount INT
+	quantity INT,
+	sales INT
 );
