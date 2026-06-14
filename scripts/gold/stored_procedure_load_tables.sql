@@ -22,10 +22,10 @@ BEGIN
       cst_key,
       cst_firstname,
       cst_lastname,
-      country,
+      ISNULL(country, 'n/a'),
       COALESCE(silver.erp_cust_az12.gender, silver.crm_cust_info.cst_gndr, 'n/a') gender,
       ISNULL(cst_marital_status, 'n/a') cst_marital_status,
-      ISNULL(birth_dt, 'n/a') birth_dt
+      ISNULL(CAST(birth_dt AS VARCHAR), 'n/a') birth_dt
     FROM silver.crm_cust_info
     LEFT JOIN silver.erp_cust_az12
     ON silver.crm_cust_info.cst_key = silver.erp_cust_az12.cst_id
