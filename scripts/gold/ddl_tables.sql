@@ -17,7 +17,7 @@ CREATE TABLE gold.dim_customers (
   country NVARCHAR(50),
   marital_status NVARCHAR(50),
   gender NVARCHAR(50),
-  birth_date DATE
+  birth_date NVARCHAR(50)
 );
 
 GO
