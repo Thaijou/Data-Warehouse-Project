@@ -13,8 +13,8 @@ BEGIN
   customer_firstname,
   customer_lastname,
   country,
-  marital_status,
   gender,
+  marital_status,
   birth_date
   )
     SELECT
@@ -23,9 +23,9 @@ BEGIN
       cst_firstname,
       cst_lastname,
       country,
-      ISNULL(silver.erp_cust_az12.gender, silver.crm_cust_info.cst_gndr) gender,
-      cst_marital_status,
-      birth_dt
+      COALESCE(silver.erp_cust_az12.gender, silver.crm_cust_info.cst_gndr, 'n/a') gender,
+      ISNULL(cst_marital_status, 'n/a') cst_marital_status,
+      ISNULL(birth_dt, 'n/a') birth_dt
     FROM silver.crm_cust_info
     LEFT JOIN silver.erp_cust_az12
     ON silver.crm_cust_info.cst_key = silver.erp_cust_az12.cst_id
